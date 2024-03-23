@@ -6,19 +6,19 @@
 </head>
 <body>
  
-<button onclick="showRandomImage()">Show Random Image</button>
- 
-<img id="randomImage" src="" alt="Random Image" style="display:none;">
+<button id="randomImageBtn">random image</button>
+<br><br>
+<img id="randomImage" src="placeholder.png" alt="随机图片" style="display:none;">
  
 <script src="script.js">
-	function showRandomImage() {
-  var images = ["image1.png", "image2.png", "image3.jpg"]; // 图片列表
-  var randomIndex = Math.floor(Math.random() * images.length); // 随机索引
-  var imgElement = document.getElementById("randomImage");
-  
-  imgElement.style.display = "block"; // 显示图片
-  imgElement.src = images[randomIndex]; // 设置图片源
-}
+	document.getElementById('randomImageBtn').addEventListener('click', function() {
+    var images = ['image1.jpg', 'image2.jpg', 'image3.jpg']; // 图片列表
+    var randomIndex = Math.floor(Math.random() * images.length); // 随机索引
+    var randomImage = images[randomIndex]; // 随机图片
+ 
+    document.getElementById('randomImage').src = randomImage; // 设置图片源
+    document.getElementById('randomImage').style.display = 'block'; // 显示图片
+});
 </script>
 </body>
 </html>
